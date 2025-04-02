@@ -7,6 +7,15 @@
 //    priority
 //  />;
 
+import Navbar from "@/components/organisms/Navbar";
+
 export default function Home() {
-  return <main>Welcome To Fundable!!!</main>;
+  return (
+    <main className="flex flex-col">
+      <Navbar />
+      <div className="text-white bg-fundable-deep-purple-light h-dvh">
+        hello
+      </div>
+    </main>
+  );
 }
