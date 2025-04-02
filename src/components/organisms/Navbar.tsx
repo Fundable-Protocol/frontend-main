@@ -7,7 +7,7 @@ import FundableLogo from "../../../public/svgs/fundable_logo.svg";
 
 import MenuButton from "../atoms/MenuButton";
 import ConnectWalletButton from "../atoms/ConnectWalletButton";
-import useMenuAnimation from "@/lib/hooks/useAnimationHook";
+import useMenuAnimation from "../../hooks/useAnimationHook";
 
 const links = [
   { name: "Resources", href: "#" },
