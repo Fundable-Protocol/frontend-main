@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Bricolage_Grotesque } from "next/font/google";
+
 import "./globals.css";
 import AppProvider from "../providers/app-provider";
+import { geistMono, geistSans, syneSans, urbanistFont } from "@/assets/fonts";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
+  variable: "--font-bricolage-grotesque",
 });
 
 export const metadata: Metadata = {
@@ -29,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black overflow-hidden`}
+        className={`${bricolageGrotesque.variable} ${geistSans.variable} ${geistMono.variable} ${inter.className} ${syneSans.variable} ${urbanistFont.variable} antialiased bg-black overflow-hidden`}
       >
         <AppProvider>{children}</AppProvider>
       </body>

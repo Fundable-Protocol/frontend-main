@@ -4,6 +4,13 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-geist-sans: var(--font-geist-sans);
+  --font-geist-mono: var(--font-geist-mono);
+  --font-inter: var(--font-inter);
+  --font-syne: var(--font-syne);
+  --font-urbanist: var(--font-urbanist);
+  --font-bricolage: var(--font-bricolage-grotesque);
+
   /* Fundable Colors Inline */
 
   --color-fundable-dark: var(--fundable-dark);
@@ -215,5 +222,10 @@
       var(--color-fundable-purple-lighter) 100%,
       var(--color-fundable-violet-lighter) 40%
     );
+  }
+
+  .fundable-text {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 0.1px;
   }
 }

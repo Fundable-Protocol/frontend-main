@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 
 import { Button } from "../ui/button";
@@ -18,6 +19,8 @@ const ConnectWalletButton = ({
   onClick,
 }: ConnectWalletBtnProps) => {
   const mounted = useMount();
+  const router = useRouter();
+
   const { connectWallet, disConnectWallet } = useConnectWallet();
   const { isConnected } = walletEntity.get();
 
@@ -25,17 +28,13 @@ const ConnectWalletButton = ({
     onClick?.();
 
     if (!isConnected) {
-      connectWallet();
+      connectWallet().then(() => {
+        router.push("/admin");
+      });
     }
 
-    if (isConnected) {
-      disConnectWallet();
-    }
+    if (isConnected) disConnectWallet();
   };
-
-  {
-    /* {`${address?.slice(0, 6)}...${address?.slice(-4)}`} */
-  }
 
   return !mounted ? (
     <Button
