@@ -5,12 +5,14 @@ import Marquee from "@/components/molecules/Marquee";
 import { Button } from "@/components/ui/button";
 
 import FundableHero from "../../../../public/svgs/fundableHero.svg";
-import FundableText from "../../../../public/svgs/hero-slide.svg";
+import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 
 const Hero = () => {
   return (
     <header className="text-center container">
-      <Image src={FundableText} alt="Fundable text" className="ml-3" />
+      <div className="hidden md:inline-block h-[4rem]">
+        <TextHoverEffect text="FUNDABLE" />
+      </div>
 
       <h1 className="font-syne text-5xl md:leading-[6rem] md:text-8xl font-bold">
         Refining automated <br /> payments in web3
