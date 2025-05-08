@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <nav className="container">
-      <div className="flex justify-between items-center container !max-w-full  py-6 font-geist-sans border-b border-fundable-dark">
+      <div className="flex justify-between items-center container !max-w-full  py-2 font-geist-sans border-b border-fundable-dark">
         <Image
           src={FundableLogo}
           alt="logo"
