@@ -1,24 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(req: NextRequest) {
-  const walletConnected = req.cookies.get("walletConnected")?.value === "true";
-
-  console.log("walletConnected:", walletConnected);
+  const walletConnected =
+    req["cookies"].get("isPrevConnected")?.value === "true";
 
   const { pathname } = req.nextUrl;
 
-  console.log("pathName:", pathname);
-  // if (walletConnected && pathname === "/") {
-  //   return NextResponse.redirect(new URL("/dashboard", req.url));
-  // }
+  if (walletConnected && pathname === "/") {
+    return NextResponse.redirect(new URL("/admin", req.url));
+  }
 
-  // if (!walletConnected && pathname.startsWith("/dashboard")) {
-  //   return NextResponse.redirect(new URL("/", req.url));
-  // }
+  if (!walletConnected && pathname.startsWith("/admin")) {
+    return NextResponse.redirect(new URL("/", req.url));
+  }
 
   return NextResponse.next();
 }
 // "/dashboard/:path*";
 export const config = {
-  matcher: ["/"],
+  matcher: ["/", "/admin", "/admin/:path*"],
 };

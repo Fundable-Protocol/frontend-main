@@ -4,12 +4,20 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-geist-sans: var(--font-geist-sans);
+  --font-geist-mono: var(--font-geist-mono);
+  --font-inter: var(--font-inter);
+  --font-syne: var(--font-syne);
+  --font-urbanist: var(--font-urbanist);
+  --font-bricolage: var(--font-bricolage-grotesque);
+
   /* Fundable Colors Inline */
 
   --color-fundable-dark: var(--fundable-dark);
   --color-fundable-violet: var(--fundable-violet);
   --color-fundable-purple: var(--fundable-purple);
   --color-fundable-deep-purple: var(--fundable-deep-purple);
+  --color-fundable-white: #c9ccd2;
 
   --color-fundable-deep-purple-light: color-mix(
     in oklab,
@@ -215,5 +223,26 @@
       var(--color-fundable-purple-lighter) 100%,
       var(--color-fundable-violet-lighter) 40%
     );
+  }
+
+  .fundable-text {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 0.1px;
+  }
+
+  .faq-trigger {
+    @apply bg-transparent font-semibold w-fit rounded-full focus:ring-2 focus:ring-fundable-violet;
+  }
+
+  .faq-wrapper {
+    @apply relative inline-flex h-10 overflow-hidden rounded-full p-[1px] bg-red-500;
+  }
+
+  .faq-top-grad {
+    @apply absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)];
+  }
+
+  .faq-bottom-grad {
+    @apply inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-0.5 text-sm font-medium text-fundable-white backdrop-blur-3xl;
   }
 }

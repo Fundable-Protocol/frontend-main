@@ -1,4 +1,7 @@
-import { setWalletEntity } from "@/store/walletEntity";
+import { StarknetkitConnector, useStarknetkitConnectModal } from "starknetkit";
+
+import Cookies from "js-cookie";
+
 import {
   Connector,
   useAccount,
@@ -6,12 +9,20 @@ import {
   useDisconnect,
 } from "@starknet-react/core";
 
-import { StarknetkitConnector, useStarknetkitConnectModal } from "starknetkit";
+import SecureLS from "secure-ls";
+
+import { setWallet } from "@/store/walletEntity";
 
 export function useConnectWallet() {
   const { disconnect } = useDisconnect();
 
-  const { connectAsync, connectors } = useConnect();
+  // Initialize SecureLS only on the client side.
+  const ls =
+    typeof window !== "undefined"
+      ? new SecureLS({ encodingType: "aes" })
+      : null;
+
+  const { connectAsync, connectors, isSuccess } = useConnect();
 
   const { starknetkitConnectModal } = useStarknetkitConnectModal({
     connectors: connectors as StarknetkitConnector[],
@@ -21,44 +32,48 @@ export function useConnectWallet() {
     try {
       const { connector } = await starknetkitConnectModal();
 
-      setWalletEntity({ isConnecting: true });
-
       if (!connector) {
-        setWalletEntity({
-          isConnecting: false,
+        setWallet({
           isConnected: false,
           address: "",
         });
+
+        Cookies.remove("isPrevConnected");
 
         return;
       }
 
       await connectAsync({ connector: connector as Connector });
-
-      setWalletEntity({
-        isConnecting: false,
-        isConnected: true,
-        address,
-      });
     } catch {}
   }
 
   async function disConnectWallet() {
     disconnect();
 
-    setWalletEntity({
-      isConnecting: false,
+    setWallet({
       isConnected: false,
       address: "",
     });
-  }
 
-  //  address: `${address?.slice(0, 6)}...${address?.slice(-4)}`,
+    Cookies.remove("isPrevConnected");
+
+    ls?.remove("aktInfo");
+  }
 
   const { address } = useAccount();
 
-  return {
-    disConnectWallet,
-    connectWallet,
-  };
+  if (isSuccess) {
+    setWallet({
+      isConnected: true,
+      address,
+    });
+
+    ls?.set("aktInfo", { isPrevConnected: true, address });
+
+    Cookies.set("isPrevConnected", "true", {
+      path: "/",
+    });
+  }
+
+  return { address, disConnectWallet, connectWallet };
 }

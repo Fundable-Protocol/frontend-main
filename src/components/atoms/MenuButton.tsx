@@ -14,7 +14,7 @@ const MenuButton = ({
   bottomLineRef,
 }: MenuButtonProps) => (
   <div
-    className="size-11 border border-stone-300 rounded-full grid place-content-center bg-stone-300 md:hidden"
+    className="size-11 border border-fundable-deep-purple-lighter rounded-full grid place-content-center bg-fundable-dark md:hidden"
     onClick={onClick}
   >
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">

@@ -20,12 +20,12 @@ const Navbar = () => {
     useMenuAnimation();
 
   return (
-    <nav>
-      <div className="flex justify-between items-center container !max-w-full bg-black py-6">
+    <nav className="container">
+      <div className="flex justify-between items-center container !max-w-full  py-2 font-geist-sans border-b border-fundable-dark">
         <Image
           src={FundableLogo}
           alt="logo"
-          className="w-28 md:w-24 z-10"
+          className="w-28 md:w-24 z-20"
           priority
         />
 
@@ -34,14 +34,14 @@ const Navbar = () => {
             <Link
               href={link.href}
               key={link.name}
-              className="hover:text-blue-200"
+              className="hover:text-fundable-purple"
             >
               {link.name}
             </Link>
           ))}
         </div>
 
-        <div className="flex items-center z-10">
+        <div className="flex items-center z-20">
           <MenuButton
             onClick={toggleMenu}
             topLineRef={topLineScope}
@@ -57,7 +57,7 @@ const Navbar = () => {
       {/* Mobile Nav*/}
 
       <div
-        className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-black md:hidden"
+        className="fixed top-0 left-0 w-full h-0 overflow-hidden bg-black md:hidden z-10"
         ref={navScope}
       >
         <div className="pt-28 pb-5 container !max-w-full">
@@ -69,7 +69,7 @@ const Navbar = () => {
             <Link
               href={link.href}
               key={link.name}
-              className="hover:text-blue-200 text-2xl py-6 container !max-w-full border-t last:border-b border-stone-800"
+              className="hover:text-fundable-deep-purple-lighter text-2xl py-6 container !max-w-full border-t last:border-b border-stone-800"
               onClick={toggleMenu}
             >
               {link.name}
