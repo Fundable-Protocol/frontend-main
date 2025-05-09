@@ -20,8 +20,16 @@ git clone git@github.com:Fundable-Protocol/frontend-main.git
 
 ```
 
-1. Install Dependencies
+2. Install Dependencies
 
 ```bash
 pnpm install
 ```
+
+3. Run the development server
+
+```bash
+pnpm dev
+```
+
+
