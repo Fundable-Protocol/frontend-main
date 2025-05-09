@@ -8,9 +8,11 @@ import {
 const FaqAccordion = ({
   answer,
   question,
+  index,
 }: {
   question: string;
   answer: string;
+  index: number;
 }) => {
   return (
     <Accordion
@@ -18,7 +20,7 @@ const FaqAccordion = ({
       collapsible
       className="w-full border border-fundable-violet-lighter/50 mb-4 py-2 px-6 rounded-xl text-fundable-white bg-black isolate"
     >
-      <AccordionItem value={`item-${question}`}>
+      <AccordionItem value={`item-${index}`}>
         <AccordionTrigger className="text-base cursor-pointer">
           {question}
         </AccordionTrigger>

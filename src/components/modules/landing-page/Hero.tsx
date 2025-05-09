@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 
 import Marquee from "@/components/molecules/Marquee";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 
 import FundableHero from "../../../../public/svgs/fundableHero.svg";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
@@ -22,7 +22,7 @@ const Hero = () => {
         automated <br /> payments in web3.
       </p>
       <div className="flex flex-col justify-center items-center relative">
-        <div className="absolute space-x-4 md:space-x-8 md:top-40">
+        {/* <div className="absolute space-x-4 md:space-x-8 md:top-40">
           <Link href="#" className="z-10">
             <Button
               className="bg-fundable-deep-purple hover:bg-fundable-purple"
@@ -41,7 +41,7 @@ const Hero = () => {
               Discover More
             </Button>
           </Link>
-        </div>
+        </div> */}
 
         <Image src={FundableHero} alt="Fundable hero image" priority />
 

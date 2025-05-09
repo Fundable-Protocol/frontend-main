@@ -13,7 +13,7 @@ const FaqSection = () => {
         className="absolute object-cover w-[80%] h-auto -top-[90%] right-[15%]"
       />
       <div className="flex flex-col items-center gap-y-4">
-        <h1 className="font-syne text-3xl text-center sm:text-left lg:text-5xl font-bold">
+        <h1 className="font-syne text-2xl md:text-3xl text-center sm:text-left lg:text-5xl font-bold">
           Frequently Asked Questions
         </h1>
         <p className="text-center text-sm md:text-lg tracking-wide lg:leading-[1.875rem] text-fundable-white text-balance">
@@ -25,8 +25,8 @@ const FaqSection = () => {
 
       <Image
         src={star}
-        alt="star"
-        className="absolute object-cover w-[27%] h-auto -bottom-[40%] right-[20%] -z-10"
+        alt="faq-star"
+        className="hidden xl:inline-block absolute object-cover w-[27%] h-auto -bottom-[40%] right-[20%] -z-10"
       />
     </section>
   );

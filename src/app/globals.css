@@ -14,6 +14,7 @@
   /* Fundable Colors Inline */
 
   --color-fundable-dark: var(--fundable-dark);
+  --color-fundable-grey: var(--fundable-grey);
   --color-fundable-violet: var(--fundable-violet);
   --color-fundable-purple: var(--fundable-purple);
   --color-fundable-deep-purple: var(--fundable-deep-purple);
@@ -96,6 +97,7 @@
   /* Fundable Colors */
 
   --fundable-dark: #0d0019;
+  --fundable-grey: #4a4949;
   --fundable-purple: #b102cd;
   --fundable-violet: #5b21b6;
   --fundable-deep-purple: #440495;

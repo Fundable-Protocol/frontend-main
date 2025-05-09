@@ -53,7 +53,7 @@ const ConnectWalletButton = ({
       size={type === "mobile" ? "md" : "default"}
       onClick={handleConnectWallet}
     >
-      {!isConnected ? "Connect Wallet" : "Launch App"}
+      Launch App
     </Button>
   );
 };

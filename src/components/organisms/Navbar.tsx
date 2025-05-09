@@ -29,7 +29,7 @@ const Navbar = () => {
           priority
         />
 
-        <div className="hidden md:flex flex-grow justify-center gap-x-14 text-white">
+        {/* <div className="hidden md:flex flex-grow justify-center gap-x-14 text-white">
           {links.map((link) => (
             <Link
               href={link.href}
@@ -39,7 +39,7 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-        </div>
+        </div> */}
 
         <div className="flex items-center z-20">
           <MenuButton

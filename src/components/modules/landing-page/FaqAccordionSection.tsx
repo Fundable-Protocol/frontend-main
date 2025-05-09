@@ -67,13 +67,13 @@ const FaqAccordionSection = () => {
         {tabLists.map((tab) => (
           <TabsContent key={`tab-content-${tab.key}`} value={tab.key}>
             {faqs.map((faq, i) => (
-              <FaqAccordion key={`Faq-Key-${i}`} {...faq} />
+              <FaqAccordion key={`Faq-Key-${i}`} {...faq} index={i + 1} />
             ))}
           </TabsContent>
         ))}
         <TabsContent value="missing-faq">
           {faqs.map((faq, i) => (
-            <FaqAccordion key={`Faq-Key-${i}`} {...faq} />
+            <FaqAccordion key={`Faq-Key-${i}`} {...faq} index={5} />
           ))}
         </TabsContent>
       </>
