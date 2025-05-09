@@ -3,17 +3,33 @@
 import { type CarouselApi } from "@/components/ui/carousel";
 
 import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BlogCarouselWrapper from "./BlogCarouselWrapper";
+import { cn } from "@/lib/utils";
 
 const BlogSection = () => {
   const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  const carouselLength = api?.scrollSnapList().length;
+
+  useEffect(() => {
+    if (!api) return;
+
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
 
   const handlePrev = () => {
+    if (current === 1) return;
     api?.scrollPrev();
   };
 
   const handleNext = () => {
+    if (current === carouselLength) return;
     api?.scrollNext();
   };
 
@@ -27,12 +43,18 @@ const BlogSection = () => {
         <span className="flex gap-x-1 text-fundable-white">
           <CircleChevronLeft
             size="3rem"
-            className="cursor-pointer text-fundable-grey"
+            className={cn(
+              "cursor-pointer",
+              current === 1 ? "text-fundable-grey" : ""
+            )}
             onClick={handlePrev}
           />
           <CircleChevronRight
             size="3rem"
-            className="cursor-pointer"
+            className={cn(
+              "cursor-pointer",
+              current === carouselLength ? "text-fundable-grey" : ""
+            )}
             onClick={handleNext}
           />
         </span>

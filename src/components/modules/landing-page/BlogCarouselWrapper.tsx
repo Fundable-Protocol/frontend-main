@@ -7,12 +7,12 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import carouselImage from "../../../../public/svgs/carousel_thumbail.svg";
 
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { Card, CardContent, CardDescription } from "@/components/ui/card";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export interface BlogCarouselProps {
