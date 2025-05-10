@@ -1,7 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import FaqAccordion from "@/components/molecules/FaqAccordion";
 
-const FaqGradientButton = ({ text }: { text: string }) => {
+export const FaqGradientButton = ({ text }: { text: string }) => {
   return (
     <div className="faq-wrapper">
       <span className="faq-top-grad" />
