@@ -15,15 +15,15 @@ const Hero = () => {
         <TextHoverEffect text="FUNDABLE" />
       </div>
 
-      <h1 className="font-syne text-5xl md:leading-[6rem] md:text-8xl font-bold">
+      <h1 className="font-syne text-3xl md:leading-[6rem] md:text-8xl font-bold">
         Refining Automated <br /> Payments in Web3
       </h1>
       <div className="mt-4 md:flex md:items-center md:justify-center md:gap-x-2">
-        <p className="font-inter md:text-xl tracking-wide">
-          Your one stop <br className="md:hidden" /> web3 automated payment
-          solution for
+        <p className="font-inter md:text-xl tracking-wide mb-2 md:mb-0">
+          Your one stop web3 <br className="md:hidden" />
+          automated payment solution for
         </p>
-        <br className="inline-block md:hidden" />
+        {/* <br className="inline md:hidden" /> */}
         <ContainerTextFlip words={words} />
       </div>
       <div className="flex flex-col justify-center items-center relative mt-8">

@@ -46,7 +46,7 @@ const ConnectWalletButton = ({
       <span className={cn("btn-grad", !mounted ? "hidden" : "")} />
       <Button
         variant="gradient"
-        className={type === "mobile" ? "text-xl py-4" : ""}
+        className={type === "mobile" ? "text-base py-4" : ""}
         size={type === "mobile" ? "md" : "default"}
         onClick={handleConnectWallet}
         disabled={!mounted}

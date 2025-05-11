@@ -37,7 +37,7 @@ const BlogCarousel = ({ setApi, cardDetails }: BlogCarouselProps) => {
         {cardDetails.map((cardDetail, index) => (
           <CarouselItem
             key={index}
-            className="basis-1/2 md:basis-1/3 md:max-w-[25rem]"
+            className="basis-1/1 md:basis-1/2 lg:basis-1/3 md:max-w-[25rem]"
           >
             <Card className="p-1.5 pb-6 bg-black border-[#1E212F]">
               <CardContent className="p-0">
