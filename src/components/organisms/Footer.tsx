@@ -10,9 +10,9 @@ const links = [
 ];
 
 const socialLinks = [
-  { name: "X", href: "#" },
-  { name: "Discord", href: "#" },
-  { name: "Telegram", href: "#" },
+  { name: "X", href: "https://x.com/FundableHQ" },
+  { name: "Telegram", href: "https://t.me/fundable_finance" },
+  // { name: "Discord", href: "#" },
 ];
 
 const Footer = () => {
@@ -57,6 +57,7 @@ const Footer = () => {
               <Link
                 key={`footer-social-index-${link.name}`}
                 href={link.href}
+                target="_"
                 className="hover:underline"
               >
                 <FaqGradientButton text={link.name} />

@@ -253,7 +253,7 @@
   }
 
   .btn-grad {
-    @apply absolute inset-[-1000%] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#440495_0%,#b102cd_50%,#5b21b6_100%)] -z-10;
+    @apply absolute inset-[-1000%] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#440495_30%,#b102cd_50%,#5b21b6_100%)] -z-10;
   }
 
   .btn-bottom-grad {

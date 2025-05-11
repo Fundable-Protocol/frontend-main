@@ -8,7 +8,7 @@ import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 
 const Hero = () => {
-  const words = ["Subscriptions", "Airdrops", "Salaries", "Automated"];
+  const words = ["Subscriptions", "Airdrops", "Salaries", "More..."];
   return (
     <header className="text-center container">
       <div className="hidden md:inline-block h-[4rem]">
@@ -18,11 +18,14 @@ const Hero = () => {
       <h1 className="font-syne text-5xl md:leading-[6rem] md:text-8xl font-bold">
         Refining Automated <br /> Payments in Web3
       </h1>
-      <p className="font-inter md:text-xl my-4 tracking-wide">
-        Your web3 one stop solution for{" "}
+      <div className="mt-4 md:flex md:items-center md:justify-center md:gap-x-2">
+        <p className="font-inter md:text-xl tracking-wide">
+          Your one stop <br className="md:hidden" /> web3 automated payment
+          solution for
+        </p>
         <br className="inline-block md:hidden" />
         <ContainerTextFlip words={words} />
-      </p>
+      </div>
       <div className="flex flex-col justify-center items-center relative mt-8">
         {/* <div className="absolute space-x-4 md:space-x-8 md:top-40">
           <Link href="#" className="z-10">
