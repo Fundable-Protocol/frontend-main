@@ -1,7 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import FaqAccordion from "@/components/molecules/FaqAccordion";
 
-const FaqGradientButton = ({ text }: { text: string }) => {
+export const FaqGradientButton = ({ text }: { text: string }) => {
   return (
     <div className="faq-wrapper">
       <span className="faq-top-grad" />
@@ -67,13 +67,13 @@ const FaqAccordionSection = () => {
         {tabLists.map((tab) => (
           <TabsContent key={`tab-content-${tab.key}`} value={tab.key}>
             {faqs.map((faq, i) => (
-              <FaqAccordion key={`Faq-Key-${i}`} {...faq} />
+              <FaqAccordion key={`Faq-Key-${i}`} {...faq} index={i + 1} />
             ))}
           </TabsContent>
         ))}
         <TabsContent value="missing-faq">
           {faqs.map((faq, i) => (
-            <FaqAccordion key={`Faq-Key-${i}`} {...faq} />
+            <FaqAccordion key={`Faq-Key-${i}`} {...faq} index={5} />
           ))}
         </TabsContent>
       </>

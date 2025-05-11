@@ -14,6 +14,7 @@
   /* Fundable Colors Inline */
 
   --color-fundable-dark: var(--fundable-dark);
+  --color-fundable-grey: var(--fundable-grey);
   --color-fundable-violet: var(--fundable-violet);
   --color-fundable-purple: var(--fundable-purple);
   --color-fundable-deep-purple: var(--fundable-deep-purple);
@@ -96,6 +97,7 @@
   /* Fundable Colors */
 
   --fundable-dark: #0d0019;
+  --fundable-grey: #4a4949;
   --fundable-purple: #b102cd;
   --fundable-violet: #5b21b6;
   --fundable-deep-purple: #440495;
@@ -200,7 +202,7 @@
 
   .bg-fundable-gradient {
     background: linear-gradient(
-      95deg,
+      85deg,
       var(--fundable-deep-purple) 30%,
       var(--fundable-purple) 100%,
       var(--fundable-violet) 40%
@@ -235,14 +237,26 @@
   }
 
   .faq-wrapper {
-    @apply relative inline-flex h-10 overflow-hidden rounded-full p-[1px] bg-red-500;
+    @apply relative inline-flex h-10 overflow-hidden rounded-full p-[2px];
   }
 
   .faq-top-grad {
-    @apply absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)];
+    @apply absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#b102cd_0%,#5b21b6_50%,#b102cd_100%)];
   }
 
   .faq-bottom-grad {
     @apply inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-0.5 text-sm font-medium text-fundable-white backdrop-blur-3xl;
+  }
+
+  .btn-wrapper {
+    @apply relative inline-flex overflow-hidden rounded-full p-[2.5px] h-[2.6rem];
+  }
+
+  .btn-grad {
+    @apply absolute inset-[-1000%] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#440495_30%,#b102cd_50%,#5b21b6_100%)] -z-10;
+  }
+
+  .btn-bottom-grad {
+    @apply inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-3 py-0.5 text-sm font-medium text-fundable-white backdrop-blur-3xl hover:bg-slate-700;
   }
 }
