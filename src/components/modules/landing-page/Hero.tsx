@@ -1,14 +1,13 @@
 import Image from "next/image";
 
 import Marquee from "@/components/molecules/Marquee";
-// import { Button } from "@/components/ui/button";
 
 import FundableHero from "../../../../public/svgs/fundableHero.svg";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 
 const Hero = () => {
-  const words = ["Subscriptions", "Airdrops", "Salaries", "More..."];
+  const words = ["Grants", "Salaries", "Airdrops", "Subscriptions", "More..."];
   return (
     <header className="text-center container">
       <div className="hidden md:inline-block h-[4rem]">
