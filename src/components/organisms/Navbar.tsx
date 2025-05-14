@@ -3,11 +3,15 @@
 import Link from "next/link";
 import Image from "next/image";
 
+// import { useRouter } from "next/navigation";
+
 import FundableLogo from "../../../public/svgs/fundable_logo.svg";
 
 import MenuButton from "../atoms/MenuButton";
-import ConnectWalletButton from "../atoms/ConnectWalletButton";
 import useMenuAnimation from "../../hooks/useAnimationHook";
+// import GradientButton from "../atoms/GradientButton";
+// import { isMobileDevice } from "@/lib/utils";
+import ConnectStarknetkitModal from "../atoms/ConnectStarknetkitModal";
 
 const links = [
   { name: "Resources", href: "#" },
@@ -16,8 +20,16 @@ const links = [
 ];
 
 const Navbar = () => {
+  // const router = useRouter();
+
   const { toggleMenu, navScope, topLineScope, bottomLineScope } =
     useMenuAnimation();
+
+  // const routeToAdmin = () => {
+  //   router.push("/admin");
+
+  //   if (isMobileDevice()) toggleMenu();
+  // };
 
   return (
     <nav className="container">
@@ -29,18 +41,6 @@ const Navbar = () => {
           priority
         />
 
-        {/* <div className="hidden md:flex flex-grow justify-center gap-x-14 text-white">
-          {links.map((link) => (
-            <Link
-              href={link.href}
-              key={link.name}
-              className="hover:text-fundable-purple"
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div> */}
-
         <div className="flex items-center z-20">
           <MenuButton
             onClick={toggleMenu}
@@ -49,7 +49,8 @@ const Navbar = () => {
           />
 
           <div className="hidden md:inline-flex">
-            <ConnectWalletButton type="desktop" />
+            {/* <GradientButton type="desktop" onClick={routeToAdmin} /> */}
+            <ConnectStarknetkitModal />
           </div>
         </div>
       </div>
@@ -61,7 +62,8 @@ const Navbar = () => {
         ref={navScope}
       >
         <div className="pt-28 pb-5 container !max-w-full">
-          <ConnectWalletButton onClick={toggleMenu} />
+          {/* <GradientButton onClick={routeToAdmin} /> */}
+          <ConnectStarknetkitModal onClick={toggleMenu} />
         </div>
 
         <div className="flex flex-col text-white">

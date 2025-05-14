@@ -204,14 +204,14 @@
     background: linear-gradient(
       85deg,
       var(--fundable-deep-purple) 30%,
-      var(--fundable-purple) 100%,
-      var(--fundable-violet) 40%
+      var(--fundable-deep-purple) 100%,
+      var(--fundable-deep-purple) 40%
     );
   }
 
   .bg-fundable-gradient:hover {
     background: linear-gradient(
-      95deg,
+      50deg,
       var(--color-fundable-deep-purple-light) 30%,
       var(--color-fundable-purple-light) 100%,
       var(--color-fundable-violet-light) 40%
@@ -249,7 +249,7 @@
   }
 
   .btn-wrapper {
-    @apply relative inline-flex overflow-hidden rounded-full p-[2.5px] h-[2.6rem];
+    @apply relative inline-flex overflow-hidden rounded-full p-[2.5px] h-[2.rem];
   }
 
   .btn-grad {

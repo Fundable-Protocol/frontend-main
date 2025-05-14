@@ -8,6 +8,7 @@ import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 
 const Hero = () => {
   const words = ["Grants", "Salaries", "Airdrops", "Subscriptions", "More..."];
+
   return (
     <header className="text-center container">
       <div className="hidden md:inline-block h-[4rem]">
