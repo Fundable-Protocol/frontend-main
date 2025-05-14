@@ -9,7 +9,7 @@ import FundableLogo from "../../../public/svgs/fundable_logo.svg";
 
 import MenuButton from "../atoms/MenuButton";
 import useMenuAnimation from "../../hooks/useAnimationHook";
-import GradientButton from "../atoms/GradientButton";
+// import GradientButton from "../atoms/GradientButton";
 import { isMobileDevice } from "@/lib/utils";
 import ConnectStarknetkitModal from "../atoms/ConnectStarknetkitModal";
 
