@@ -53,8 +53,6 @@ export function useConnectWallet() {
         return;
       }
 
-      console.log("connector:::::", typeof connector?.wallet);
-
       await connectAsync({ connector: connector as Connector });
     } catch (err) {
       console.log("ERRRRR::::", err);

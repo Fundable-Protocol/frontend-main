@@ -3,14 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 import FundableLogo from "../../../public/svgs/fundable_logo.svg";
 
 import MenuButton from "../atoms/MenuButton";
 import useMenuAnimation from "../../hooks/useAnimationHook";
-// import GradientButton from "../atoms/GradientButton";
-// import { isMobileDevice } from "@/lib/utils";
+import GradientButton from "../atoms/GradientButton";
+import { isMobileDevice } from "@/lib/utils";
 import ConnectStarknetkitModal from "../atoms/ConnectStarknetkitModal";
 
 const links = [
@@ -20,16 +20,16 @@ const links = [
 ];
 
 const Navbar = () => {
-  // const router = useRouter();
+  const router = useRouter();
 
   const { toggleMenu, navScope, topLineScope, bottomLineScope } =
     useMenuAnimation();
 
-  // const routeToAdmin = () => {
-  //   router.push("/admin");
+  const routeToAdmin = () => {
+    router.push("/admin");
 
-  //   if (isMobileDevice()) toggleMenu();
-  // };
+    if (isMobileDevice()) toggleMenu();
+  };
 
   return (
     <nav className="container">
@@ -63,7 +63,7 @@ const Navbar = () => {
       >
         <div className="pt-28 pb-5 container !max-w-full">
           {/* <GradientButton onClick={routeToAdmin} /> */}
-          <ConnectStarknetkitModal onClick={toggleMenu} />
+          <ConnectStarknetkitModal onClick={routeToAdmin} />
         </div>
 
         <div className="flex flex-col text-white">
