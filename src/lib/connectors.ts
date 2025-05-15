@@ -10,17 +10,18 @@ import { InjectedConnector } from "starknetkit/injected";
 import { WebWalletConnector } from "starknetkit/webwallet";
 
 import { constants } from "starknet";
+import { StarknetkitConnector } from "starknetkit";
 
 export const getAvailableConnectors = () => {
   const argentMobile = ArgentMobileConnector.init({
     options: {
       dappName: "Fundable",
-      url: typeof window !== "undefined" ? window.location.href : "",
+      url: typeof window !== "undefined" ? window.location.href : "staging.fundable.finance",
       chainId: constants.NetworkName.SN_MAIN,
       projectId: "4f854415eedab0dd9258793f029e728d",
       description: "Your web3 automated payment processor",
     },
-  });
+  }) as StarknetkitConnector;
 
   const connectorOptions = [
     { id: "braavos", name: "Braavos" },
