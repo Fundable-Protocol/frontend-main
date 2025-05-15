@@ -27,7 +27,6 @@ export function useConnectWallet() {
   // Move the success handler to useEffect to avoid re-renders
   useEffect(() => {
     if (address) {
-      console.log("Address::::", address);
       setWallet({
         isConnected: true,
         address,
