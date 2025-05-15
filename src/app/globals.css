@@ -14,9 +14,11 @@
   /* Fundable Colors Inline */
 
   --color-fundable-dark: var(--fundable-dark);
+  --color-fundable-mid-dark: var(--fundable-mid-dark);
   --color-fundable-grey: var(--fundable-grey);
   --color-fundable-violet: var(--fundable-violet);
   --color-fundable-purple: var(--fundable-purple);
+  --color-fundable-purple-2: var(--fundable-purple-2);
   --color-fundable-deep-purple: var(--fundable-deep-purple);
   --color-fundable-white: #c9ccd2;
 
@@ -97,8 +99,10 @@
   /* Fundable Colors */
 
   --fundable-dark: #0d0019;
+  --fundable-mid-dark: #151617;
   --fundable-grey: #4a4949;
   --fundable-purple: #b102cd;
+  --fundable-purple-2: #8256ff;
   --fundable-violet: #5b21b6;
   --fundable-deep-purple: #440495;
 
@@ -127,11 +131,11 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
+  --sidebar: transparent;
   --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.21 0.006 285.885);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-primary: #000;
+  --sidebar-primary-foreground: #000;
+  --sidebar-accent: #8256ff;
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);

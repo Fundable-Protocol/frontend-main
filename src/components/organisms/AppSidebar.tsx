@@ -24,8 +24,8 @@ import Link from "next/link";
 // Menu items.
 const items = [
   {
-    title: "Dashboard",
-    url: "/admin",
+    title: "Overview",
+    url: "/dashboard",
     icon: MenuSvg,
     attribute: "dashboard",
   },

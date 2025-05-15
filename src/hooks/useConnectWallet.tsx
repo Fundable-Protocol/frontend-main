@@ -11,20 +11,22 @@ import { useEffect, useCallback, useRef } from "react";
 
 export function useConnectWallet() {
   const { disconnect } = useDisconnect();
-  const { connectAsync, connectors, isSuccess } = useConnect();
+  const { connectAsync, connectors } = useConnect();
   const { address } = useAccount();
-
-  // Store connectors in a ref to avoid re-renders when accessing them
-  const connectorsRef = useRef(connectors);
 
   // Use refs to store memoized functions
   const lsRef = useRef(
     typeof window !== "undefined" ? new SecureLS({ encodingType: "aes" }) : null
   );
 
+  const isPrevConnected =
+    typeof window !== "undefined"
+      ? lsRef?.current?.get("aktInfo")?.isPrevConnected
+      : false;
+
   // Move the success handler to useEffect to avoid re-renders
   useEffect(() => {
-    if (isSuccess && address) {
+    if (address) {
       setWallet({
         isConnected: true,
         address,
@@ -32,7 +34,7 @@ export function useConnectWallet() {
 
       lsRef.current?.set("aktInfo", { isPrevConnected: true, address });
     }
-  }, [isSuccess, address]);
+  }, [address]);
 
   const { starknetkitConnectModal } = useStarknetkitConnectModal({
     connectors: connectors as StarknetkitConnector[],
@@ -74,7 +76,7 @@ export function useConnectWallet() {
     address,
     disConnectWallet,
     connectWallet,
-    isConnected: Boolean(address && isSuccess),
-    connectors: connectorsRef.current,
+    isConnected: Boolean(address),
+    isPrevConnected,
   };
 }
