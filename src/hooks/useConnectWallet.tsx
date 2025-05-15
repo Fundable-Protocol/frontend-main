@@ -56,8 +56,8 @@ export function useConnectWallet() {
       }
 
       await connectAsync({ connector: connector as Connector });
-    } catch (err) {
-      console.log("ERRRRR::::", err);
+    } catch {
+      // console.log("ERRRRR::::", err);
     }
   }, [starknetkitConnectModal, connectAsync]);
 
