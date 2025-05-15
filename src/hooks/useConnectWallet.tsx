@@ -10,9 +10,9 @@ import { setWallet } from "@/store/walletEntity";
 import { useEffect, useCallback, useRef } from "react";
 
 export function useConnectWallet() {
+  const { address } = useAccount();
   const { disconnect } = useDisconnect();
   const { connectAsync, connectors } = useConnect();
-  const { address } = useAccount();
 
   // Use refs to store memoized functions
   const lsRef = useRef(
@@ -27,6 +27,7 @@ export function useConnectWallet() {
   // Move the success handler to useEffect to avoid re-renders
   useEffect(() => {
     if (address) {
+      console.log("Address::::", address);
       setWallet({
         isConnected: true,
         address,
