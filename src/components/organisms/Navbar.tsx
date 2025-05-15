@@ -7,14 +7,13 @@ import { useRouter } from "next/navigation";
 
 import FundableLogo from "../../../public/svgs/fundable_logo.svg";
 
-import MenuButton from "../atoms/MenuButton";
 import useMenuAnimation from "../../hooks/useAnimationHook";
-// import GradientButton from "../atoms/GradientButton";
+import GradientButton from "../atoms/GradientButton";
+import MenuButton from "../atoms/MenuButton";
 import { isMobileDevice } from "@/lib/utils";
-import ConnectStarknetkitModal from "../atoms/ConnectStarknetkitModal";
 
 const links = [
-  { name: "Resources", href: "#" },
+  { name: "Blog", href: "#" },
   { name: "About", href: "#" },
   { name: "Contact", href: "#" },
 ];
@@ -26,7 +25,7 @@ const Navbar = () => {
     useMenuAnimation();
 
   const routeToAdmin = () => {
-    router.push("/admin");
+    router.push("/dashboard");
 
     if (isMobileDevice()) toggleMenu();
   };
@@ -49,8 +48,7 @@ const Navbar = () => {
           />
 
           <div className="hidden md:inline-flex">
-            {/* <GradientButton type="desktop" onClick={routeToAdmin} /> */}
-            <ConnectStarknetkitModal />
+            <GradientButton type="desktop" onClick={routeToAdmin} />
           </div>
         </div>
       </div>
@@ -62,8 +60,7 @@ const Navbar = () => {
         ref={navScope}
       >
         <div className="pt-28 pb-5 container !max-w-full">
-          {/* <GradientButton onClick={routeToAdmin} /> */}
-          <ConnectStarknetkitModal onClick={routeToAdmin} />
+          <GradientButton onClick={routeToAdmin} />
         </div>
 
         <div className="flex flex-col text-white">
